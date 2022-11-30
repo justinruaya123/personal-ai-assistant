@@ -1,0 +1,28 @@
+#Core packages (prerequisites of the packages below)
+pytorch-lightning
+torchmetrics
+
+torch
+pytorch-lightning
+torchmetrics
+torchaudio
+
+#VAD (Voice Activity Detection) - cobra 
+# https://github.com/Picovoice/cobra 
+pvcobra
+
+#ASR (automatic speech recognition) - NEMO
+# https://github.com/NVIDIA/NeMo
+Cython
+nemo_toolkit
+numba
+tensorboard
+wrapt
+
+
+#LLM (large language model) - undecided
+
+
+#TTS (text to speech) - GTTS
+# https://github.com/coqui-ai/TTS 
+gTTS
