@@ -12,7 +12,6 @@ def main():
     while True:
         run("QDSbvyxt9Wg7uxOmdoa7Pi96CqjPHSek+Cxq2cTZxmuZY13MHvFVwA==", audio_device_index)
         print("\nVoice recorded: voice.wav")
-        break
 
 
 if __name__ == "__main__":

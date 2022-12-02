@@ -19,10 +19,11 @@ def run(key, audio_device_index):
     recorder.start()
     
     #Start wave file
-    wav_file = wave.open("voice.wav", "w")
-    wav_file.setparams((1, 2, 16000, 512, "NONE", "NONE"))  
+    
     #For timeout logic
     since_recognized = int(round(time.time() * 1000))
+    write = False
+    ran_write = False
     
     while True:
         pcm = recorder.read()
@@ -34,15 +35,23 @@ def run(key, audio_device_index):
         sys.stdout.write("\r[%3d]|%s%s|: %s" % (
             percentage, '█' * bar_length, ' ' * empty_length, "I hear you! Speak your request. " if voice_probability>0.5 else "I can't hear you for now. "))
         sys.stdout.flush()
-        wav_file.writeframes(struct.pack("h" * len(pcm), *pcm))
+        
         if voice_probability > 0.5:
             since_recognized = getTimeInMS()
-            continue
-        if (getTimeInMS() - since_recognized) >= audio_timeout:
-            recorder.stop()
-            break
-    wav_file.close()
-    handle.delete()
+            write = True 
+        else:
+            if (getTimeInMS() - since_recognized) >= audio_timeout:
+                recorder.stop()
+                handle.delete()
+                break
+        if write and not ran_write:
+            wav_file = wave.open("voice.wav", "w")
+            wav_file.setparams((1, 2, 16000, 512, "NONE", "NONE"))  
+            ran_write = True
+        if write:
+            wav_file.writeframes(struct.pack("h" * len(pcm), *pcm))
+    if ran_write:
+        wav_file.close()
         
 
     
