@@ -34,7 +34,6 @@ def run(key, audio_device_index):
         sys.stdout.write("\r[%3d]|%s%s|: %s" % (
             percentage, '█' * bar_length, ' ' * empty_length, "I hear you! Speak your request. " if voice_probability>0.5 else "I can't hear you for now. "))
         sys.stdout.flush()
-
         wav_file.writeframes(struct.pack("h" * len(pcm), *pcm))
         if voice_probability > 0.5:
             since_recognized = getTimeInMS()
