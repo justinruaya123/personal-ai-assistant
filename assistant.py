@@ -1,16 +1,20 @@
 from VAD import *
-import pyaudio
 from pvrecorder import PvRecorder
+import keyboard
+
+
 
 def main():
-    print("Starting personal assistant...")
+    print("Press 'Q' to stop the assistant.")
     devices = PvRecorder.get_audio_devices()
     for i in range(len(devices)):
         print("Device %d: %s" % (i, devices[i]))
     audio_device_index = int(input("Select audio device ID: "))
 
     while True:
-        run("QDSbvyxt9Wg7uxOmdoa7Pi96CqjPHSek+Cxq2cTZxmuZY13MHvFVwA==", audio_device_index)
+        if not RUN_VAD("QDSbvyxt9Wg7uxOmdoa7Pi96CqjPHSek+Cxq2cTZxmuZY13MHvFVwA==", audio_device_index):
+            continue
+
         print("\nVoice recorded: voice.wav")
 
 

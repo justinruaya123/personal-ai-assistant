@@ -11,8 +11,8 @@ audio_timeout = 1000 #Timeout in miliseconds
 def getTimeInMS():
     return int(round(time.time() * 1000))
 
-
-def run(key, audio_device_index):
+#Returns true if wave file successfully overwritten
+def RUN_VAD(key, audio_device_index):
     handle = pvcobra.create(access_key = key)
     recorder = PvRecorder(device_index=audio_device_index, frame_length=512)   
     print("Listening...")
@@ -52,6 +52,7 @@ def run(key, audio_device_index):
             wav_file.writeframes(struct.pack("h" * len(pcm), *pcm))
     if ran_write:
         wav_file.close()
+    return ran_write
         
 
     
