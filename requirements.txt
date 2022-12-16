@@ -1,7 +1,7 @@
 #Core packages (prerequisites of the packages below)
 pytorch-lightning
 torchmetrics
-keyboard
+pynput
 torch
 pytorch-lightning
 torchmetrics
@@ -12,25 +12,20 @@ torchaudio
 pvcobra
 pvrecorder
 pyaudio
+
 #ASR (automatic speech recognition) - NEMO
 # https://github.com/NVIDIA/NeMo
-Cython
-hydra
-nemo 
-nemo_toolkit
-
-ffmpeg-python
 
 
 
-#LLM (large language model) - undecided
-ChatGPT
+
+#LLM (large language model) - ChatGPT
 openai
-python-dotenv
+ChatGPT
 
 #TTS (text to speech) - GTTS
 # https://github.com/coqui-ai/TTS 
-gTTS
-
+gTTs
+playsound==1.2.2
 # additional packages
 thread6

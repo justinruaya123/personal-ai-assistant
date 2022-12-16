@@ -15,7 +15,6 @@ def getTimeInMS():
 def RUN_VAD(key, audio_device_index):
     handle = pvcobra.create(access_key = key)
     recorder = PvRecorder(device_index=audio_device_index, frame_length=512)   
-    print("Listening...")
     recorder.start()
     
     #Start wave file
@@ -34,7 +33,6 @@ def RUN_VAD(key, audio_device_index):
         empty_length = 30 - bar_length
         sys.stdout.write("\r[%3d]|%s%s|: %s" % (
             percentage, '█' * bar_length, ' ' * empty_length, "I hear you! Speak your request. " if voice_probability>0.5 else "I can't hear you for now. "))
-        sys.stdout.flush()
         
         if voice_probability > 0.5:
             since_recognized = getTimeInMS()
@@ -52,6 +50,9 @@ def RUN_VAD(key, audio_device_index):
             wav_file.writeframes(struct.pack("h" * len(pcm), *pcm))
     if ran_write:
         wav_file.close()
+    
+    sys.stdout.write("")
+    sys.stdout.flush()
     return ran_write
         
 
