@@ -21,7 +21,7 @@ pyaudio
 
 #LLM (large language model) - ChatGPT
 openai
-ChatGPT
+
 
 #TTS (text to speech) - GTTS
 # https://github.com/coqui-ai/TTS 
