@@ -1,7 +1,7 @@
 from VAD import *
 from ASR import * 
 from TTS import *
-from LLM import generate_response as generate
+from LLM import *
 from pvrecorder import PvRecorder
 from pynput import keyboard
 from pynput.keyboard import Key, KeyCode, Listener
@@ -15,7 +15,7 @@ def main():
         print("Device %d: %s" % (i, devices[i]))
     audio_device_index = int(input("Select audio device ID: "))
     response_key = input("Do you have an OpenAI key? [Y/N] > ")
-    if(response_key[0].toLowerCase() == 'y'):
+    if(response_key[0]== "y" or response_key[0]== "Y"):
         LLM.setKey(input("Enter key here > "))
     count = 0
 
