@@ -15,7 +15,7 @@ pyaudio
 
 #ASR (automatic speech recognition) - NEMO
 # https://github.com/NVIDIA/NeMo
-
+SpeechRecognition
 
 
 

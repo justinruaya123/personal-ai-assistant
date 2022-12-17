@@ -1,7 +1,6 @@
 # Personal AI Assistant
 
 
-
 ## How to use
 ```
 git clone https://github.com/justinruaya123/personal-ai-assistant/
@@ -12,3 +11,10 @@ python3 assistant.py
 
 Take note that this requires Microsoft Visual C++ 14.0 (or better) and Python 3 to be installed.
 Link: https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170 
+
+# Group Members:
+# FUENSALIDA, Danica Alyssa D.
+# CRISTOBAL, Jenny Rose P.
+# MACARAEG, Abbie Coleen Faye P.
+# RUAYA, Justin Jose R.
+# FAJARDO, Iana Angela

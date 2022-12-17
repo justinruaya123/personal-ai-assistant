@@ -1,32 +1,17 @@
 from gtts import gTTS
-from io import BytesIO
-from pydub import AudioSegment
-import wave
-import os
 import playsound
-#import time
-
-
-#input_text = 'I want to cry!' #trial input pero change to output ng ASR kapag meron na
-#language = 'en'
 
 class TTS:
     tts = None 
 
-    def process(input_text, language): #Save tts to mp3
+    def process(input_text, language = 'en'): #Save tts to mp3
         tts = gTTS(input_text, lang= language)
-        tts.save("response.mp3")
+        tts.save("reply.mp3")
     # Play the mp3 file with playsound
     def speak():
-        playsound.playsound("response.mp3")
-
-
-
-
-                                                        
-    
-
-
+        playsound.playsound("reply.mp3")
+        
+       
 
 #playsound.playsound(filename)
 #os.remove(filename)
