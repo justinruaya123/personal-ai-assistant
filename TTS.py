@@ -1,16 +1,19 @@
 from gtts import gTTS
 import playsound
+from pygame import mixer
 
-class TTS:
-    tts = None 
 
-    def process(input_text, language = 'en'): #Save tts to mp3
-        tts = gTTS(input_text, lang= language)
-        tts.save("reply.mp3")
+tts = None
+#hey imma restart lang the vscode and my lappy Imma send ulit the link afterwards
+
+def process(input_text, language = 'en'): #Save tts to mp3
+    tts = gTTS(input_text, lang= language)
+    tts.save("reply.mp3")
+   # playsound.playsound("reply.mp3") #problem here
     # Play the mp3 file with playsound
-    def speak():
-        playsound.playsound("reply.mp3")
-        
+    mixer.init()
+    mixer.music.load("reply.mp3")
+    mixer.music.play()
        
 
 #playsound.playsound(filename)

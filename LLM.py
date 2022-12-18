@@ -1,7 +1,6 @@
 import openai
 
-openai.api_key = "sk"+ "-" + "759DgHTJW" + "UQSDxw4GpYQT" + "3BlbkFJ3tCCf0" + "kKM4ki33LONyrw"
-def setKey(key):
+def setKey(key): 
     openai.api_key = key
 
 def generate_response(text):

@@ -19,15 +19,19 @@ def main():
         setKey(input("Enter key here > "))
     count = 0
 
+    if(response_key[0]== "n" or response_key[0]== "N"):
+        defaultkey = "sk"+ "-" + "759DgHTJW" + "UQSDxw4GpYQT" + "3BlbkFJ3tCCf0" + "kKM4ki33LONyrw"
+        setKey(defaultkey)
+        print("Using default key...")
+
     while enabled:
-        if not RUN_VAD("QDSbvyxt9Wg7uxOmdoa7Pi96CqjPHSek+Cxq2cTZxmuZY13MHvFVwA==", audio_device_index):
+        if not RUN_VAD("gPzgL70mfw/cUr1UUcGC6n6nsfO1IXZzhNyXJr8xkIUZUDBcDNW6ug==", audio_device_index):
             continue
         text = AutomaticSpeechRecognition().run("voice.wav")
         print(count, "You said:", text)
         response = generate_response(text)
         print(count, "[uWu Machine]:", response)
-        TTS.process(response, 'en')
-        TTS.speak()
+        process(response, 'en')
         print("=====================================")
         count+=1
 
