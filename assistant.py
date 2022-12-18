@@ -16,7 +16,7 @@ def main():
     audio_device_index = int(input("Select audio device ID: "))
     response_key = input("Do you have an OpenAI key? [Y/N] > ")
     if(response_key[0]== "y" or response_key[0]== "Y"):
-        LLM.setKey(input("Enter key here > "))
+        setKey(input("Enter key here > "))
     count = 0
 
     while enabled:
@@ -24,7 +24,7 @@ def main():
             continue
         text = AutomaticSpeechRecognition().run("voice.wav")
         print(count, "You said:", text)
-        response = generate(text)
+        response = generate_response(text)
         print(count, "[uWu Machine]:", response)
         TTS.process(response, 'en')
         TTS.speak()
