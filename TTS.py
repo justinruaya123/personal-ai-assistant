@@ -1,6 +1,5 @@
 from gtts import gTTS
 import playsound
-from pygame import mixer
 
 
 tts = None

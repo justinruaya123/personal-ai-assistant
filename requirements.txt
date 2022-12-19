@@ -27,5 +27,6 @@ openai
 # https://github.com/coqui-ai/TTS 
 gTTs
 playsound==1.2.2
+
 # additional packages
 thread6
