@@ -9,12 +9,7 @@ tts = None
 def process(input_text, language = 'en'): #Save tts to mp3
     tts = gTTS(input_text, lang= language)
     tts.save("reply.mp3")
-   # playsound.playsound("reply.mp3") #problem here
-    # Play the mp3 file with playsound
-    mixer.init()
-    mixer.music.load("reply.mp3")
-    mixer.music.play()
-       
+    playsound.playsound("reply.mp3") #problem here
 
 #playsound.playsound(filename)
 #os.remove(filename)

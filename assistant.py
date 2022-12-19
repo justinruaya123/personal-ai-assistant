@@ -25,7 +25,7 @@ def main():
         print("Using default key...")
 
     while enabled:
-        if not RUN_VAD("gPzgL70mfw/cUr1UUcGC6n6nsfO1IXZzhNyXJr8xkIUZUDBcDNW6ug==", audio_device_index):
+        if not RUN_VAD("NV4KTRNWamnvv0mjNP3a6aQHXx6VRirDWmpdov1gTrVymfJwsw6v4Q==", audio_device_index):
             continue
         text = AutomaticSpeechRecognition().run("voice.wav")
         print(count, "You said:", text)
